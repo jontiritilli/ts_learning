@@ -12,8 +12,7 @@ console.log("string1", typeof string1);
 interface BaseDto<T> {
   success: boolean,
   data?: T,
-  message?: string,
-  code?: number
+  message?: string
 }
 type CreditData = {
   company: string;
@@ -27,10 +26,10 @@ type UserData = {
 
 class ControllerDto<T> implements BaseDto<T> {
   constructor(
-    public success: boolean = false,
-    public data?: T,
-    public message?: string,
-    public code?: number
+    readonly success: boolean = false,
+    readonly data?: T,
+    readonly message?: string,
+    readonly code?: number
   ) {
   }
 }
@@ -53,7 +52,7 @@ console.log("example1", example1);
 
 const example2 = new ControllerDto<CreditData>(
   false,
-  undefined, //per documentation, pass optional params as undefined if not used
+  undefined, //per TS documentation, pass optional params as undefined if not used
   "Credit records not available",
   961
 );
@@ -66,7 +65,7 @@ console.log("example3", example3);
 
 const example4 = new ControllerDto<UserData>(
   false,
-  undefined, //per documentation, pass optional params as undefined if not used
+  undefined, //per TS documentation, pass optional params as undefined if not used
   "User record not available",
   963
 );
