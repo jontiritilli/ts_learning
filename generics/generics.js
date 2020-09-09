@@ -2,11 +2,11 @@ function identity(arg) {
     return arg;
 }
 var number = identity(5);
-console.log("number", number);
+console.log("number", typeof number);
 var string = identity("5");
-console.log("string", string);
+console.log("string", typeof string);
 var string1 = identity("5");
-console.log("string1", string1);
+console.log("string1", typeof string1);
 var ControllerDto = /** @class */ (function () {
     function ControllerDto(success, data, message, code) {
         if (success === void 0) { success = false; }

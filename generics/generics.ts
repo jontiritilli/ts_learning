@@ -2,12 +2,12 @@ function identity<T>(arg: T): T {
   return arg;
 }
 
-let number = identity<number>(5);
-console.log("number", number);
-let string = identity<string>("5");
-console.log("string", string);
-let string1 = identity("5");
-console.log("string1", string1);
+const number = identity<number>(5);
+console.log("number",typeof  number);
+const string = identity<string>("5");
+console.log("string", typeof string);
+const string1 = identity("5");
+console.log("string1", typeof string1);
 
 interface BaseDto<T> {
   success: boolean,
